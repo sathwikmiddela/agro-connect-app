@@ -35,7 +35,7 @@ export function PhoneScreen({ phone, setPhone, onNext }: PhoneScreenProps) {
       <Image contentFit="contain" source={require('@/assets/images/image 7.svg')} style={styles.headerIcon} />
       <View style={styles.copyBlock}>
         <Text style={styles.title}>Enter your{'\n'}Phone Number</Text>
-        <Text style={styles.subcopy}>We'll send you a verification code</Text>
+        <Text style={styles.subcopy}>We&apos;ll send you a verification code</Text>
       </View>
 
       <View style={[styles.formGroup, showError && styles.formGroupError]}>

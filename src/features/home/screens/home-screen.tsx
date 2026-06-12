@@ -3,6 +3,7 @@ import { ScrollView, Text, View, Pressable } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { styles } from '../styles';
+import { NavBar } from '@/components/nav-bar';
 
 export function HomeScreen() {
   const router = useRouter();
@@ -39,7 +40,7 @@ export function HomeScreen() {
         </View>
 
         <View style={styles.bannerCard}>
-          <Text style={styles.bannerText}>Let's grow your business together</Text>
+          <Text style={styles.bannerText}>Let&apos;s grow your business together</Text>
           <Image source={require('@/assets/images/image-removebg-preview 1.svg')} style={styles.bannerImage} contentFit="contain" />
         </View>
 
@@ -65,24 +66,7 @@ export function HomeScreen() {
       </ScrollView>
 
       {/* Bottom Bar */}
-      <View style={styles.bottomBar}>
-        <View style={styles.tabItem}>
-          <Image source={require('@/assets/images/home.svg')} style={styles.tabIcon} contentFit="contain" tintColor="#4CAF50" />
-          <Text style={[styles.tabLabel, styles.tabLabelActive]}>Home</Text>
-        </View>
-        <Pressable style={styles.tabItem} onPress={() => router.push('/crops' as any)}>
-          <Image source={require('@/assets/images/wheat.svg')} style={styles.tabIcon} contentFit="contain" tintColor="#1C1B1F" />
-          <Text style={styles.tabLabel}>Crops</Text>
-        </Pressable>
-        <View style={styles.tabItem}>
-          <Image source={require('@/assets/images/box.svg')} style={styles.tabIcon} contentFit="contain" tintColor="#1C1B1F" />
-          <Text style={styles.tabLabel}>Orders</Text>
-        </View>
-        <View style={styles.tabItem}>
-          <Image source={require('@/assets/images/Ellipse 1008.svg')} style={styles.tabIcon} contentFit="contain" />
-          <Text style={styles.tabLabel}>Profile</Text>
-        </View>
-      </View>
+      <NavBar />
     </View>
   );
 }

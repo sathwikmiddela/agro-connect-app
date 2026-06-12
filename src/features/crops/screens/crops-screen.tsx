@@ -4,6 +4,7 @@ import { Image } from 'expo-image';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { styles } from '../styles';
+import { NavBar } from '@/components/nav-bar';
 
 type TabType = 'All' | 'Live' | 'Sold' | 'Draft';
 
@@ -72,35 +73,7 @@ export function CropsScreen() {
       </ScrollView>
 
       {/* Bottom Bar */}
-      <View style={styles.bottomBar}>
-        <Pressable style={styles.tabItem} onPress={() => router.replace('/home' as any)}>
-          <View style={styles.tabIconBox}>
-            <Image source={require('@/assets/images/home.svg')} style={styles.tabIcon} contentFit="contain" tintColor="#1C1B1F" />
-          </View>
-          <Text style={styles.tabLabel}>Home</Text>
-        </Pressable>
-        
-        <Pressable style={styles.tabItem}>
-          <View style={styles.tabIconBox}>
-            <Image source={require('@/assets/images/wheat.svg')} style={styles.tabIcon} contentFit="contain" tintColor="#4CAF50" />
-          </View>
-          <Text style={[styles.tabLabel, styles.tabLabelActive]}>Crops</Text>
-        </Pressable>
-
-        <Pressable style={styles.tabItem}>
-          <View style={styles.tabIconBox}>
-            <Image source={require('@/assets/images/box.svg')} style={styles.tabIcon} contentFit="contain" tintColor="#1C1B1F" />
-          </View>
-          <Text style={styles.tabLabel}>Orders</Text>
-        </Pressable>
-
-        <Pressable style={styles.tabItem}>
-          <View style={styles.tabIconBox}>
-            <Image source={require('@/assets/images/Ellipse 1008.svg')} style={styles.tabIcon} contentFit="contain" />
-          </View>
-          <Text style={styles.tabLabel}>Profile</Text>
-        </Pressable>
-      </View>
+      <NavBar />
     </View>
   );
 }

@@ -14,7 +14,7 @@ type OtpScreenProps = {
 };
 
 export function OtpScreen({ phone, otp, setOtp, onNext }: OtpScreenProps) {
-  const inputRefs = useRef<Array<TextInput | null>>([]);
+  const inputRefs = useRef<(TextInput | null)[]>([]);
 
   return (
     <View style={styles.screen}>
